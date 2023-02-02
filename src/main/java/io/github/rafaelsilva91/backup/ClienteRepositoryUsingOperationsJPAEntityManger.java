@@ -1,5 +1,6 @@
-package io.github.rafaelsilva91.domain.repositories;
+package io.github.rafaelsilva91.backup;
 
+/*
 import io.github.rafaelsilva91.domain.entities.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -57,3 +58,4 @@ public class ClienteRepositoryUsingOperationsJPAEntityManger {
     }
 
 }
+*/
