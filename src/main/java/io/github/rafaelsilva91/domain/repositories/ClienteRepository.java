@@ -1,16 +1,19 @@
 package io.github.rafaelsilva91.domain.repositories;
 
 import io.github.rafaelsilva91.domain.entities.Cliente;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
-public class ClienteRepository {
+public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
+    List<Cliente> findByNomeLike(String nome);
 
+    List<Cliente> findByNomeLikeOrIdOrderById(String nome, Integer id);
 
+    //Exemplos
+    Cliente findOneByNome(String nome);
+
+    boolean existsByNome(String nome);
 }

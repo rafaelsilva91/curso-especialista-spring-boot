@@ -1,6 +1,7 @@
 package io.github.rafaelsilva91;
 
 import io.github.rafaelsilva91.domain.entities.Cliente;
+import io.github.rafaelsilva91.domain.repositories.ClienteRepository;
 import io.github.rafaelsilva91.domain.repositories.ClienteRepositoryUsingOperationsJPAEntityManger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,41 +19,45 @@ import java.util.List;
 public class VendasApplication {
 
     @Bean
-    public CommandLineRunner init(@Autowired ClienteRepositoryUsingOperationsJPAEntityManger clienteRepository) {
+    public CommandLineRunner init(@Autowired ClienteRepository clienteRepository) {
         return args -> {
 
             Cliente cliente = new Cliente();
             cliente.setNome("Rafael Rodrigues");
-            clienteRepository.salvar(cliente);
+            clienteRepository.save(cliente);
 
-            Cliente cliente2 = clienteRepository.salvar(new Cliente("Rafael Silva"));
+            Cliente cliente2 = clienteRepository.save(new Cliente("Rafael Silva"));
 
-            Cliente cliente3 = clienteRepository.salvar(new Cliente("José"));
+            Cliente cliente3 = clienteRepository.save(new Cliente("José"));
 
-            Cliente cliente4 = clienteRepository.salvar(new Cliente("Maria"));
+            Cliente cliente4 = clienteRepository.save(new Cliente("Maria"));
+
+            System.out.println("Consulta por nome ");
+            boolean existe = clienteRepository.existsByNome("José");
+            System.out.println("Existe cliente com nome José? "+existe);
 
             System.out.println("Listando Clientes");
-            List<Cliente> todosClientes = clienteRepository.obterTodos();
+            List<Cliente> todosClientes = clienteRepository.findAll();
             todosClientes.forEach(System.out::println);
 
             System.out.println("Atualizando Clientes");
             todosClientes.forEach(c->{
                 c.setNome(c.getNome() + " atualizado.");
-                clienteRepository.atualizar(c);
+                clienteRepository.save(c);
             });
-            todosClientes = clienteRepository.obterTodos();
+            todosClientes = clienteRepository.findAll();
             todosClientes.forEach(System.out::println);
 
             System.out.println("Buscando Cliente por nome");
-            clienteRepository.buscarPorNome("Jo").forEach(System.out::println);
+            clienteRepository.findByNomeLike("Jo").forEach(System.out::println);
 
             System.out.println("Deletando Cliente");
-            clienteRepository.obterTodos().forEach(c->{
-                clienteRepository.deletar(c);
+            clienteRepository.findAll().forEach(c->{
+                clienteRepository.delete(c);
             });
 
 
-            todosClientes = clienteRepository.obterTodos();
+            todosClientes = clienteRepository.findAll();
             if(todosClientes.isEmpty()){
                 System.out.println("Nenhum cliente encontrado!");
             }else{
