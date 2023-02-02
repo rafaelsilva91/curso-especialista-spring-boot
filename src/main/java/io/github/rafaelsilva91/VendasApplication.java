@@ -1,7 +1,7 @@
 package io.github.rafaelsilva91;
 
 import io.github.rafaelsilva91.domain.entities.Cliente;
-import io.github.rafaelsilva91.domain.repositories.ClienteRepository;
+import io.github.rafaelsilva91.domain.repositories.ClienteRepositoryUsingOperationsJPAEntityManger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -18,7 +18,7 @@ import java.util.List;
 public class VendasApplication {
 
     @Bean
-    public CommandLineRunner init(@Autowired ClienteRepository clienteRepository) {
+    public CommandLineRunner init(@Autowired ClienteRepositoryUsingOperationsJPAEntityManger clienteRepository) {
         return args -> {
 
             Cliente cliente = new Cliente();
