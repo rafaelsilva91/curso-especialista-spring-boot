@@ -47,10 +47,12 @@ public class VendasApplication {
             });
             todosClientes = clienteRepository.findAll();
             todosClientes.forEach(System.out::println);
-
-            System.out.println("Buscando Cliente por nome");
+            System.out.println();
+            System.out.println("Buscando Cliente por nome - metodo encontrarPorNome");
+            clienteRepository.encontrarPorNome("Jo").forEach(System.out::println);
+            System.out.println("Buscando Cliente por nome - metodo findByNomeLike");
             clienteRepository.findByNomeLike("Jo").forEach(System.out::println);
-
+            System.out.println();
             System.out.println("Deletando Cliente");
             clienteRepository.findAll().forEach(c->{
                 clienteRepository.delete(c);
