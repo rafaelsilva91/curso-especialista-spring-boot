@@ -18,108 +18,24 @@ import java.time.LocalDate;
 import java.util.List;
 
 @SpringBootApplication
-@RestController
 public class VendasApplication {
 
     @Bean
-    public CommandLineRunner init(
-            @Autowired ClienteRepository clienteRepository,
-            @Autowired PedidoRepository pedidoRepository
-    ) {
+    public CommandLineRunner commandLineRunner(@Autowired ClienteRepository clienteRepository){
         return args -> {
 
-            Cliente cliente = new Cliente();
-            cliente.setNome("Rafael Rodrigues");
-            clienteRepository.save(cliente);
+            Cliente c1 = new Cliente(null, "José Aldo", "00000000000");
+            Cliente c2 = new Cliente(null, "Maria Aldo", "00000000011");
 
-            Cliente cliente2 = clienteRepository.save(new Cliente("Rafael Silva"));
-
-            Cliente cliente3 = clienteRepository.save(new Cliente("José"));
-
-            Cliente cliente4 = clienteRepository.save(new Cliente("Maria"));
-
-            Pedido p = new Pedido();
-            p.setCliente(cliente4);
-            p.setDataPedido(LocalDate.now());
-            p.setTotal(BigDecimal.valueOf(100));
-
-            Pedido p2 = new Pedido();
-            p2.setCliente(cliente4);
-            p2.setDataPedido(LocalDate.now());
-            p2.setTotal(BigDecimal.valueOf(100));
-
-            pedidoRepository.save(p);
-            pedidoRepository.save(p2);
-
-//            System.out.println("PEDIDO: "+p.getId());
-
-            System.out.println();
-
-            Cliente cli = clienteRepository.findClienteFetchPedidos(cliente4.getId());
-            System.out.println(cli);
-            System.out.println(cli.getPedidos());
-            System.out.println();
-
-            List<Pedido> list =  pedidoRepository.findByCliente(cliente4);
-            System.out.println(cli);
-            System.out.println(list);
-            System.out.println();
-
-            // or
-            pedidoRepository.findByCliente(cliente4).forEach(System.out::println);
-            System.out.println();
-
-
-
-
-            System.out.println("Consulta por nome ");
-            boolean existe = clienteRepository.existsByNome("José");
-            System.out.println("Existe cliente com nome José? "+existe);
-
-            System.out.println("Listando Clientes");
-            List<Cliente> todosClientes = clienteRepository.findAll();
-            todosClientes.forEach(System.out::println);
-
-            System.out.println("Atualizando Clientes");
-            todosClientes.forEach(c->{
-                c.setNome(c.getNome() + " atualizado.");
-                clienteRepository.save(c);
-            });
-            todosClientes = clienteRepository.findAll();
-            todosClientes.forEach(System.out::println);
-            System.out.println();
-            System.out.println("Buscando Cliente por nome - metodo encontrarPorNome");
-            clienteRepository.encontrarPorNome("Jo").forEach(System.out::println);
-            System.out.println("Buscando Cliente por nome - metodo findByNomeLike");
-            clienteRepository.findByNomeLike("Jo").forEach(System.out::println);
-            System.out.println();
-//            System.out.println("Deletando Cliente");
-//            clienteRepository.findAll().forEach(c->{
-//                clienteRepository.delete(c);
-//            });
-//
-//
-//            todosClientes = clienteRepository.findAll();
-//            if(todosClientes.isEmpty()){
-//                System.out.println("Nenhum cliente encontrado!");
-//            }else{
-//                todosClientes.forEach(System.out::println);
-//            }
-
+            clienteRepository.save(c1);
+            clienteRepository.save(c2);
         };
     }
 
-    @Value("${application.name}")
-    private String s;
-
-    @GetMapping("/hello")
-    public String helloWorld(){
-        return this.s;
-    }
-
     public static void main(String[] args) {
-
         SpringApplication.run(VendasApplication.class, args);
+
+
 
     }
 }
