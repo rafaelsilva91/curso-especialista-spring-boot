@@ -2,8 +2,10 @@ package io.github.rafaelsilva91;
 
 import io.github.rafaelsilva91.domain.entities.Cliente;
 import io.github.rafaelsilva91.domain.entities.Pedido;
+import io.github.rafaelsilva91.domain.entities.Produto;
 import io.github.rafaelsilva91.domain.repositories.ClienteRepository;
 import io.github.rafaelsilva91.domain.repositories.PedidoRepository;
+import io.github.rafaelsilva91.domain.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -21,7 +23,9 @@ import java.util.List;
 public class VendasApplication {
 
     @Bean
-    public CommandLineRunner commandLineRunner(@Autowired ClienteRepository clienteRepository){
+    public CommandLineRunner commandLineRunner(
+            @Autowired ClienteRepository clienteRepository,
+            @Autowired ProdutoRepository produtoRepository){
         return args -> {
 
             Cliente c1 = new Cliente(null, "José Aldo", "00000000000");
@@ -29,6 +33,12 @@ public class VendasApplication {
 
             clienteRepository.save(c1);
             clienteRepository.save(c2);
+
+            Produto p1 = new Produto(null, "Mouse Gamer", new BigDecimal(79.99));
+            Produto p2 = new Produto(null, "Impressora", new BigDecimal(299.99));
+
+            produtoRepository.save(p1);
+            produtoRepository.save(p2);
         };
     }
 

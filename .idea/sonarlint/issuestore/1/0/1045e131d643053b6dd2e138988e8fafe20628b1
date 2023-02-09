@@ -1,0 +1,19 @@
+
+E
+java:S37402"/Provide the parametrized type for this generic.(“¢Éì
+E
+java:S3740J"/Provide the parametrized type for this generic.(´•È†
+y
+java:S1192"^Define a constant instead of duplicating this literal "Produto nÃ£o Encontrado ID: [" 3 times.(œõàüıÿÿÿÿ
+[
+java:S4684,"@Replace this persistent entity with a simple POJO or DTO object.(ú³ôÏûÿÿÿÿ
+V
+java:S46849"@Replace this persistent entity with a simple POJO or DTO object.(òèÑ¤
+J
+java:S2201E"/The return value of "orElseThrow" must be used.(œõàüıÿÿÿÿ
+V
+java:S4684K"@Replace this persistent entity with a simple POJO or DTO object.(ñ‚©»
+g
+java:S1128"LRemove this unused import 'io.github.rafaelsilva91.domain.entities.Cliente'.(ş•¿³ÿÿÿÿÿ
+J
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ
