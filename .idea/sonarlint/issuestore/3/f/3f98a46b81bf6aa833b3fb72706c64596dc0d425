@@ -1,0 +1,17 @@
+
+y
+java:S1488'"^Immediately return this expression instead of assigning it to the temporary variable "pedido".(¸­Žóúÿÿÿÿ
+Y
+java:S1612/"<Replace this lambda with method reference 'this::converter'.(ßƒ£8„¿ü³ã0
+n
+java:S1128"LRemove this unused import 'io.github.rafaelsilva91.domain.entities.Produto'.(ì’Æüúÿÿÿÿ8Ï®¤´ã0
+v
+java:S1128"YRemove this unused import 'io.github.rafaelsilva91.domain.repositories.PedidoRepository'.(”Ÿ¹À8Ï®¤´ã0
+w
+java:S1128"ZRemove this unused import 'io.github.rafaelsilva91.domain.repositories.ProdutoRepository'.(¯ô¡ž8Ð®¤´ã0
+f
+java:S1128"DRemove this unused import 'org.springframework.data.domain.Example'.(³˜œÍüÿÿÿÿ8Ð®¤´ã0
+m
+java:S1128"KRemove this unused import 'org.springframework.data.domain.ExampleMatcher'.(¯û¸ûÿÿÿÿ8Ð®¤´ã0
+f
+java:S1128"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ8Ñ®¤´ã0

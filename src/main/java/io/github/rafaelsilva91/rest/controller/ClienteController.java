@@ -31,14 +31,24 @@ public class ClienteController {
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não Encontrado ID: ["+id+"]"));
     }
 
+//    @GetMapping
+//    public ResponseEntity<List<Cliente>> findAll(){
+//        List<Cliente> list = clienteRepository.findAll();
+//        if(!list.isEmpty()){
+//            return ResponseEntity.ok().body(list);
+//        }
+//        return ResponseEntity.notFound().build();
+//    }
+
     @GetMapping
-    public ResponseEntity<List<Cliente>> findAll(){
+    public List<Cliente> findAll(){
         List<Cliente> list = clienteRepository.findAll();
         if(!list.isEmpty()){
-            return ResponseEntity.ok().body(list);
+            return list;
         }
-        return ResponseEntity.notFound().build();
+        return list;
     }
+
 
     @GetMapping("/filtro")
     public List<Cliente> findFilter( Cliente filtro){

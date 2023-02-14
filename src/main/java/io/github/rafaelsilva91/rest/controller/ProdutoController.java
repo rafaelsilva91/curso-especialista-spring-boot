@@ -32,14 +32,24 @@ public class ProdutoController {
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não Encontrado ID: ["+id+"]"));
     }
 
+//    @GetMapping
+//    public ResponseEntity<List<Produto>> findAll(){
+//        List<Produto> list = produtoRepository.findAll();
+//        if(!list.isEmpty()){
+//            return ResponseEntity.ok().body(list);
+//        }
+//        return ResponseEntity.notFound().build();
+//    }
+
     @GetMapping
-    public ResponseEntity<List<Produto>> findAll(){
+    public List<Produto> findAll(){
         List<Produto> list = produtoRepository.findAll();
         if(!list.isEmpty()){
-            return ResponseEntity.ok().body(list);
+            return list;
         }
-        return ResponseEntity.notFound().build();
+        return list;
     }
+
 
     @GetMapping("/filtro")
     public List<Produto> findFilter( Produto filtro){

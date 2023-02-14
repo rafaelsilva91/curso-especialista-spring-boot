@@ -1,0 +1,23 @@
+
+X	java:S125"<This block of commented-out lines of code should be removed.(ß…Œ8©Øı´ã0
+n
+java:S1128"LRemove this unused import 'io.github.rafaelsilva91.domain.entities.Cliente'.(ş•¿³ÿÿÿÿÿ8¯Øı´ã0
+m
+java:S1128"KRemove this unused import 'io.github.rafaelsilva91.domain.entities.Pedido'.(ƒœ®ğùÿÿÿÿ8ÌËÕ±ã0
+n
+java:S1128"LRemove this unused import 'io.github.rafaelsilva91.domain.entities.Produto'.(ì’Æüúÿÿÿÿ8£Ìˆµã0
+v
+java:S1128"YRemove this unused import 'io.github.rafaelsilva91.domain.repositories.PedidoRepository'.(”Ÿ¹À8ÍËÕ±ã0
+l
+java:S1128
+"ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›8ÍËÕ±ã0
+l
+java:S1128"ORemove this unused import 'org.springframework.web.bind.annotation.GetMapping'.(‡¡‰Ø8ÎËÕ±ã0
+u
+java:S1128"SRemove this unused import 'org.springframework.web.bind.annotation.RestController'.(±íş¡şÿÿÿÿ8ÎËÕ±ã0
+N
+java:S1128"1Remove this unused import 'java.math.BigDecimal'.(êêŠ8¤Ìˆµã0
+R
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8ÏËÕ±ã0
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÏËÕ±ã0

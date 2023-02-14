@@ -1,0 +1,21 @@
+
+E
+java:S37402"/Provide the parametrized type for this generic.(“¢Éì
+E
+java:S3740K"/Provide the parametrized type for this generic.(´•È†
+t
+java:S1192"^Define a constant instead of duplicating this literal "Cliente nÃ£o Encontrado ID: [" 3 times.(¶ä¸‘
+U
+java:S4684,"@Replace this persistent entity with a simple POJO or DTO object.(Ñ‰Æ
+V
+java:S46849"@Replace this persistent entity with a simple POJO or DTO object.(ùœ™œ
+L
+java:S2201E"/The return value of "orElseThrow" must be used.(¶ä¸‘8Œ‚’ã0
+U
+java:S4684L"@Replace this persistent entity with a simple POJO or DTO object.(®x
+e
+java:S1128"HRemove this unused import 'net.bytebuddy.implementation.bytecode.Throw'.(€ü§Ÿ8şõÊ´ã0
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8ÿõÊ´ã0
+Q
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8ÿõÊ´ã0
