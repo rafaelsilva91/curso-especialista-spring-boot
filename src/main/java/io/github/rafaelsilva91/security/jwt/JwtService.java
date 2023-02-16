@@ -1,4 +1,4 @@
-package io.github.rafaelsilva91.security;
+package io.github.rafaelsilva91.security.jwt;
 
 import io.github.rafaelsilva91.VendasApplication;
 import io.github.rafaelsilva91.domain.entities.Usuario;
@@ -12,11 +12,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.HashMap;
 
 @Service
 public class JwtService {

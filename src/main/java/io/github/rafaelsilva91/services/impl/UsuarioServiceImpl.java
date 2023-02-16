@@ -2,6 +2,8 @@ package io.github.rafaelsilva91.services.impl;
 
 import io.github.rafaelsilva91.domain.entities.Usuario;
 import io.github.rafaelsilva91.domain.repositories.UsuarioRepository;
+import io.github.rafaelsilva91.exceptions.SenhaInvalidaException;
+import org.apache.catalina.UserDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,6 +25,16 @@ public class UsuarioServiceImpl implements UserDetailsService {
     @Transactional
     public Usuario save(Usuario usuario){
         return usuarioRepository.save(usuario);
+    }
+
+    public UserDetails autenticar(Usuario usuario){
+        UserDetails user = loadUserByUsername(usuario.getLogin());
+        boolean matches = encoder.matches(usuario.getSenha(), user.getPassword());
+
+        if(matches){
+            return user;
+        }
+        throw new SenhaInvalidaException();
     }
 
     @Override
