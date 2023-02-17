@@ -1,6 +1,5 @@
 package io.github.rafaelsilva91.rest.controller;
 
-import io.github.rafaelsilva91.domain.entities.Cliente;
 import io.github.rafaelsilva91.domain.entities.Produto;
 import io.github.rafaelsilva91.domain.repositories.ProdutoRepository;
 import org.springframework.data.domain.Example;
@@ -12,7 +11,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -32,15 +30,6 @@ public class ProdutoController {
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não Encontrado ID: ["+id+"]"));
     }
 
-//    @GetMapping
-//    public ResponseEntity<List<Produto>> findAll(){
-//        List<Produto> list = produtoRepository.findAll();
-//        if(!list.isEmpty()){
-//            return ResponseEntity.ok().body(list);
-//        }
-//        return ResponseEntity.notFound().build();
-//    }
-
     @GetMapping
     public List<Produto> findAll(){
         List<Produto> list = produtoRepository.findAll();
@@ -49,7 +38,6 @@ public class ProdutoController {
         }
         return list;
     }
-
 
     @GetMapping("/filtro")
     public List<Produto> findFilter( Produto filtro){

@@ -3,7 +3,6 @@ package io.github.rafaelsilva91.services.impl;
 import io.github.rafaelsilva91.domain.entities.Usuario;
 import io.github.rafaelsilva91.domain.repositories.UsuarioRepository;
 import io.github.rafaelsilva91.exceptions.SenhaInvalidaException;
-import org.apache.catalina.UserDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -53,18 +52,4 @@ public class UsuarioServiceImpl implements UserDetailsService {
 
     }
 
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        if(!username.equals("usuario")){
-//            throw new UsernameNotFoundException("Usuário não encontrado na base!");
-//        }
-//
-//
-//        return User
-//                .builder()
-//                .username("usuario")
-//                .password(encoder.encode("123"))
-//                .roles("USER", "ADMIN")
-//                .build();
-//    }
 }

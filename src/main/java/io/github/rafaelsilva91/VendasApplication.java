@@ -22,30 +22,7 @@ import java.util.List;
 @SpringBootApplication
 public class VendasApplication {
 
-    @Bean
-    public CommandLineRunner commandLineRunner(
-            @Autowired ClienteRepository clienteRepository,
-            @Autowired ProdutoRepository produtoRepository){
-        return args -> {
-//
-//            Cliente c1 = new Cliente(null, "José Aldo", "00000000000");
-//            Cliente c2 = new Cliente(null, "Maria Aldo", "00000000011");
-//
-//            clienteRepository.save(c1);
-//            clienteRepository.save(c2);
-//
-//            Produto p1 = new Produto(null, "Mouse Gamer", new BigDecimal(79.99));
-//            Produto p2 = new Produto(null, "Impressora", new BigDecimal(299.99));
-//
-//            produtoRepository.save(p1);
-//            produtoRepository.save(p2);
-        };
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(VendasApplication.class, args);
-
-
-
     }
 }

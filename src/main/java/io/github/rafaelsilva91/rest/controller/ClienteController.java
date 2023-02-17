@@ -2,7 +2,6 @@ package io.github.rafaelsilva91.rest.controller;
 
 import io.github.rafaelsilva91.domain.entities.Cliente;
 import io.github.rafaelsilva91.domain.repositories.ClienteRepository;
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -12,9 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -30,15 +27,6 @@ public class ClienteController {
                 .findById(id)
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não Encontrado ID: ["+id+"]"));
     }
-
-//    @GetMapping
-//    public ResponseEntity<List<Cliente>> findAll(){
-//        List<Cliente> list = clienteRepository.findAll();
-//        if(!list.isEmpty()){
-//            return ResponseEntity.ok().body(list);
-//        }
-//        return ResponseEntity.notFound().build();
-//    }
 
     @GetMapping
     public List<Cliente> findAll(){
