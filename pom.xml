@@ -7,6 +7,7 @@
     <groupId>io.github.rafaelsilva91</groupId>
     <artifactId>vendas</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>${project.packaging}</packaging>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -20,6 +21,26 @@
         <version>2.2.4.RELEASE</version>
     </parent>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <project.packaging>jar</project.packaging>
+                <tomcat.scope>compile</tomcat.scope>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <project.packaging>war</project.packaging>
+                <tomcat.scope>provided</tomcat.scope>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -29,6 +50,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>${tomcat.scope}</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -79,7 +107,6 @@
             <version>2.9.2</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
